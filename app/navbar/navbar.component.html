@@ -1,0 +1,208 @@
+
+<!-- Container for the shits -->
+<section>
+    <!-- Three column div with adv on the side -->
+   
+    <p id="cliptweet">Top Tweets</p>
+ <ngu-carousel 
+     [inputs]="carouselTile1" >
+ 
+           <ngu-tile NguCarouselItem *ngFor="let tww of toptweet" >
+            <blockquote class="twitter-tweet" style="background-color:rgba(255, 255, 255, 0.9); " data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold;font-size:15px" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+           </ngu-tile> 
+           <button NguCarouselPrev class='leftRss'><img class='leftRs' src="../../assets/icons/back.png" /></button>
+           <button NguCarouselNext class='rightRss'><img class='rightRs' src="../../assets/icons/next.png"  /></button>
+     </ngu-carousel>
+     </section>
+     <br/>
+     
+     <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+       </div>
+      </div>
+     <mat-divider></mat-divider>
+     <section>
+     <div class="row">
+    <div class="col-md-12" *ngIf="topevents?.length > 0;"  class="container ">
+    <p id="clip">Top Upcoming Events</p>
+     <ngu-carousel 
+     [inputs]="carouselTile" >
+ 
+           <ngu-tile NguCarouselItem *ngFor="let Tile of topevents">
+           <div class="libby"><img src="{{Tile.pic}}" width="100%"></div>
+           </ngu-tile> 
+ 
+         <button NguCarouselPrev class='leftRss'><img class='leftRs' src="../../assets/icons/back.png" /></button>
+         <button NguCarouselNext class='rightRss'><img class='rightRs' src="../../assets/icons/next.png"  /></button>
+   </ngu-carousel></div></div></section>
+ 
+ <br>
+ <p id="cliptoday">Latest Videos</p>
+ <main>
+  <section >
+    <div class="container row">
+    <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+    <div  id="latest" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+   <iframe id="vid_frame" [src]="drip | safeUrl" frameborder="0" alt="error loading video"  class="ifrme" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div></div>
+  </section>
+   <section class="section-img" >
+      <div class="container row">
+          <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+          <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+     <h5 style="font-family: 'Ubuntu',sans-serif;color: #1A174B">Latest Videos</h5>
+     <ngu-carousel 
+     [inputs]="carouselTile2" >
+ 
+           <ngu-tile  NguCarouselItem *ngFor="let Tile of latestvideos">
+              <a mat-list-item href="javascript:void();" (click)="setDrip($event,video);internalRoute('latest')">  
+            <div class=" libby1"  ><img src="{{Tile.pic}}" style="display: block;width: 100%;height:100%;">
+               <h6><span>{{Tile.by}}:<span class='spacer'></span><br /><span class='spacer'></span>{{Tile.title}}</span></h6>
+             </div></a>
+         </ngu-tile> 
+ 
+         <button NguCarouselPrev class='leftRss'><img class='leftRs' src="../../assets/icons/back.png" /></button>
+         <button NguCarouselNext class='rightRss'><img class='rightRs' src="../../assets/icons/next.png"  /></button>
+   </ngu-carousel></div></div>
+ </section>
+   
+ </main>
+<div class=" container trappin" >
+    <br/>
+  <div >
+<h5 style="font-family:'Ubuntu',sans-serif;color:#1A174B">Top Videos</h5>  
+<a onclick="topFunction();" [routerLink]="['/motion/motion']"><p style="font-family:'Ubuntu',sans-serif;color:red;position:relative; float:right">See All</p></a>
+</div>
+ 
+ <br/>             
+ <drag-scroll >
+  <a mat-list-item href="javascript:void();" *ngFor="let video of topvideos; index as x" routerLink='#cliparts' drag-scroll-item onclick="topFunction();" (click)="setDrip($event,video);internalRoute('latest')">  
+      
+    <div class="card linkcss " style="border:none;padding-left:5px;padding-right:5px;width:180px;max-height:180px;border-botton: 3px solid #1A174B">
+      <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:180px;min-height:100px">
+      <div class="card-body ellipsis" style="overflow: hidden;">
+        <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif;font-size: 14px; line-height: normal;font-weight: bold;"><span style="background-color:white">{{video.title}}</span></p>
+        
+        <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif; font-size: 12px; line-height: normal;">{{video.by}}</p>
+         </div>
+    </div>
+</a> 
+</drag-scroll>
+</div>
+<br/>
+<mat-divider></mat-divider>
+<br/>
+<p id="clipmusic">Music</p>
+<main>
+    <section >
+        <div class="container row">
+        <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+        <div id="latestmusic" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+       <iframe id="vid_frame" [src]="drip1 | safeUrl" frameborder="0" alt="error loading video"  class="ifrme" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div></div>
+      </section>
+       <section class="section-img" >
+          <div class="container row">
+              <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+              <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+         <h5 style="font-family: 'Ubuntu',sans-serif;color: #1A174B">Latest Videos</h5>
+  <ngu-carousel 
+         [inputs]="carouselTile2" >
+     
+               <ngu-tile  NguCarouselItem *ngFor="let Tile of latestmusic">
+                  <a mat-list-item href="javascript:void();"   (click)="setDrip1($event,video);internalRoute('latestmusic')">  
+                 <div class=" libby1"  ><img src="{{Tile.pic}}" style="display: block;width: 100%;height:100%;">
+                   <h6><span>{{Tile.by}}:<span class='spacer'></span><br /><span class='spacer'></span>{{Tile.title}}</span></h6>
+                 </div></a>
+             </ngu-tile> 
+     
+             <button NguCarouselPrev class='leftRss'><img class='leftRs' src="../../assets/icons/back.png" /></button>
+             <button NguCarouselNext class='rightRss'><img class='rightRs' src="../../assets/icons/next.png"  /></button>
+       </ngu-carousel></div></div>
+     </section>
+       
+  
+</main>
+<div class="container trappin">
+   <br> 
+  <div>
+<h5 style="font-family:'Ubuntu',sans-serif;color:#1A174B">Top Videos</h5>  
+<a onclick="topFunction();" [routerLink]="['/musik']"><p style="font-family:'Ubuntu',sans-serif;color:red;position:relative; float:right">See All</p></a>
+    </div>
+ 
+ <br/>           
+ <drag-scroll >
+  <a mat-list-item href="javascript:void();" *ngFor="let video of topmusic; index as x" routerLink='#cliparts' drag-scroll-item onclick="topFunction();" (click)="setDrip1($event,video);internalRoute('latestmusic')">  
+      
+    <div class="card linkcss1 " style="border:none;padding-left:5px;padding-right:5px;width:180px;max-height:180px;border-botton: 3px solid #1A174B">
+      <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:180px;min-height:100px">
+      <div class="card-body ellipsis" style="overflow: hidden;">
+        <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif;font-size: 13px; line-height: normal;font-weight: bold;"><span style="background-color:white">{{video.title}}</span></p>
+        <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif; font-size: 12px; line-height: normal;">{{video.by}}</p>
+         
+         </div>
+    </div>
+</a> 
+</drag-scroll>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<p id="cliparts">Arts</p>
+<main>
+    <section >
+        <div class="container row">
+        <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+        <div id="arts" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+       <iframe id="vid_frame" [src]="drip2 | safeUrl" frameborder="0" alt="error loading video"  class="ifrme" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div></div>
+      </section>
+       <section class="section-img" >
+          <div class="container row">
+              <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="background-color:aqua"></div>
+              <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+         <h5 style="font-family: 'Ubuntu',sans-serif;color: #1A174B">Latest Videos</h5>
+         <ngu-carousel 
+         [inputs]="carouselTile2" >
+     
+               <ngu-tile  NguCarouselItem *ngFor="let Tile of latestarts">
+                  <a mat-list-item href="javascript:void();" (click)="setDrip2($event,video);internalRoute('arts')">
+         
+                 <div class=" libby1"  ><img src="{{Tile.pic}}" style="display: block;width: 100%;height:100%;">
+                   <h6><span>{{Tile.by}}:<span class='spacer'></span><br /><span class='spacer'></span>{{Tile.title}}</span></h6>
+                 </div></a>
+             </ngu-tile> 
+     
+             <button NguCarouselPrev class='leftRss'><img class='leftRs' src="../../assets/icons/back.png" /></button>
+             <button NguCarouselNext class='rightRss'><img class='rightRs' src="../../assets/icons/next.png"  /></button>
+       </ngu-carousel></div></div>
+     </section>
+       
+  
+</main>
+<div class=" container trappin" >
+    <br/>
+  <div > 
+<h5 style="font-family:'Ubuntu',sans-serif;color:#1A174B">Top Videos</h5>  
+<a onclick="topFunction();" [routerLink]="['/arts']"><p style="font-family:'Ubuntu',sans-serif;color:red;position:relative; float:right">See All</p></a>
+ </div>          
+ <drag-scroll >
+  <a mat-list-item href="javascript:void();" *ngFor="let video of toparts; index as x" routerLink='#cliparts' drag-scroll-item onclick="topFunction();" (click)="setDrip2($event,video);internalRoute('arts')">  
+      
+    <div class="card linkcss2 " style="border:none;padding-left:5px;padding-right:5px; width:180px;max-height:180px;border-botton: 3px solid #1A174B">
+        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:180px;min-height:100px">
+        <div class="card-body ellipsis" style="overflow: hidden;">
+          <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif;font-size: 13px; line-height: normal;font-weight: bold;"><span style="background-color:white">{{video.title}}</span></p>
+          <p class="card-text first-link" style="font-family:'Ubuntu', sans-serif; font-size: 12px; line-height: normal;">{{video.by}}</p>
+         
+           </div>
+      </div>
+</a> 
+</drag-scroll>
+</div>
+<br/>
+<br/>
+
+ 

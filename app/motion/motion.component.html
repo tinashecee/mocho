@@ -1,0 +1,61 @@
+<br />
+<p id="clip">Reality in Motion</p>
+<br/>
+<mat-divider></mat-divider>
+<br/>      
+<div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/l1J9xRxf0x8zMnA4g/giphy.gif);background-color:white;max-width:900px" >
+      
+<ngb-tabset>
+  <ngb-tab  >
+    <br/>
+      <ng-template ngbTabTitle><p id="clip1">top Videos</p> </ng-template>
+      <br/>
+      
+      <ng-template ngbTabContent>
+      <br/>
+     <div class="container "> 
+       <div class="row">
+                      <br/>  
+                      <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of videos">
+                      <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                          <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                            <p class="card-text">{{video.title}}</p>
+                            <button onclick="modd()" (click)="setDrip($event,video);" mat-button><p style="color:green;font-size:15px">PLAY</p></button>
+                             </div>
+                        </div>
+                        <br/>
+                      </div>
+                  </div>       
+            </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab >
+      <ng-template ngbTabTitle><p id="clip1">top Vlogers</p> </ng-template>
+      <br/>
+      <ng-template ngbTabContent>
+        <div class="container" >
+     <div class="row">
+                      <br/>  
+                      <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let vloger of vlogers$ | async"> 
+                          <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="../../assets/icons/drip.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <h5 class="card-title">{{vloger.name}}</h5>
+                              <button onclick="modd()" (click)="loadProfile(vloger);" [routerLink]="['/motion/motion',vloger.matcher]" mat-button>Open</button>
+                            </div>
+                          </div>
+                          <br/>
+                        </div>
+                  </div>
+    </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset></div><br/><br/>
+ <div id="myModala" class="modal w3-animate-right">
+    <button  onclick="cloz();nohomo();" class="close">&times;</button>
+    <iframe  id="playerid" [src]="drip | safeUrl" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ </div> 
+
+ 

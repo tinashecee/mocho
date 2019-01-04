@@ -1,0 +1,522 @@
+div.relative{
+    position: absolute;
+    top:90px;
+    right:30px;
+}
+
+.carousel-inner imgg {
+    width: 100%;
+    height: 100%;
+}
+a {
+    word-break: break-all;
+    color:red;
+  }
+  div.case1{
+      width:200px ;
+      height:300px;
+  }
+ 
+  .navbar-default {
+    background-color: red;
+   
+}
+div.adv1{
+    width:100% ;
+    height:250px;
+    background-color: red;
+}
+div.adv2{
+  
+    height:300px;
+    background-color: green;
+}
+div.adv3{
+    position: absolute;
+    top:400px;
+    left:20px;
+    height:700px;
+    background-color:purple;
+}
+p.tweet-text-size{
+    font-size: 13px;
+}
+footer.footy{
+    background-color: #dc3545; 
+    
+}
+div.posFooter{
+   float:right;
+}
+
+
+.containe {
+    position: absolute;
+    width: 250px;
+    height:250px;
+    max-width: 400px;
+}
+
+.containe img {
+    width: 100%;
+    height: 100%;
+}
+
+.containe .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(219, 18, 21);
+    color: white;
+    opacity: 0.9;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.containe .btn:hover {
+    background-color: black;
+}
+
+  
+  div.contain {
+    background: black;
+   width:100%;
+    /* give the outermost container a predefined size */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  
+    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section {
+   
+    background: black;
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* for Firefox */
+    min-height: 0;
+  }
+  
+  .content {
+    
+    background: black;
+  }
+  
+  div.scrollable-content {
+    
+    flex-grow: 1;
+    
+    overflow: auto;
+    
+    /* for Firefox */
+    min-height: 0;
+  }
+  h5.wht{
+      color:white;
+  }
+
+.fixed {
+ 
+  position:fixed;
+  left:8px;
+  bottom:10px;
+  width:290px;
+  height: 250px;
+  background: rgb(0, 255, 106);
+
+}
+.fixed1{
+    position:fixed;
+    right:8px;
+    bottom:10px;
+    width:210px;
+    height: 210px;
+    background: rgb(0, 217, 255);
+  
+}
+#bmu{
+    width: 0%;
+    height: 0%;
+    transition: width 2s;
+-webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
+  }
+  #bmu.active{
+    position:fixed;
+    bottom:60px;
+    right:268px;
+   
+  }
+
+#left-adv {
+     position:fixed;
+     z-index: 1;
+    width: 0px;
+  height: 0px;
+  transition: width 2s;
+  -webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
+ }
+  
+  #left-adv.active{
+    position:fixed;
+    z-index: 1;
+    bottom: 30px;
+    left:8px;
+    width: 400px;
+    height: 360px;
+ 
+  }
+#toppy{
+position:fixed;
+transition: width 2s;
+-webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
+}
+#toppy.active{
+    top:90px;
+    left:8px;
+    height:150px;
+    width:400px;
+    background-color: #dc3545;
+
+}
+
+div.leftVid{
+    position:fixed;
+    bottom: 30px;
+    left:8px;
+    width: 420px;
+  height: 380px;
+ 
+}
+div.floaty{
+    position:absolute;
+    right:260px;
+}
+p.title1{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top:65px;
+    left:8px;
+    width: 400px;
+    height: 360px;
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    transition: width 2s;
+    -webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
+   
+}
+.container{
+    position: relative;
+    top:0px;
+    bottom:0px;
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close1 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close1:hover,
+.close1:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+container.containa {
+    
+    width: 200px;
+    height: 170px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+  
+  .containa:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+  }
+  
+ 
+  
+  .title {
+    position: absolute;
+    width: 200px;
+    left: 0;
+    top: 60px;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    z-index: 1;
+    transition: top .5s ease;
+  }
+  
+  .containa:hover .title {
+    top: 40px;
+  }
+  
+  .pbutton {
+    position: absolute;
+    width: 200px;
+    left:0;
+    top: 80px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .pbutton a {
+    width: 110px;
+    padding: 10px 22px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    border: solid 2px white;
+    z-index: 1;
+  }
+  
+  .containa:hover .pbutton {
+    opacity: 1;
+  }
+  p {
+    font-size: 15px;
+}
+container.containa1 {
+    
+    width: 200px;
+    height: 300px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+  
+  .containa1:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+  }
+ 
+  .title {
+    position: absolute;
+    width: 200px;
+    left: 0;
+    top: 60px;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    z-index: 1;
+    transition: top .5s ease;
+  }
+  
+  .containa1:hover .title {
+    top: 40px;
+  }
+  
+  .pbutton1 {
+    position: absolute;
+    width: 250px;
+    left:0;
+    top: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .pbutton1 a {
+    width: 110px;
+    padding: 10px 22px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    border: solid 2px white;
+    z-index: 1;
+  }
+  
+  .containa1:hover .pbutton1 {
+    opacity: 1;
+  }
+ 
+ .example-button-toggle-label {
+    display: inline-block;
+    margin: 16px;
+  }
+ .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+
+  .example-card {
+    max-width: 400px;
+    border-top:2px solid orange;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  img {
+    width: 100%;
+    height: auto;
+}
+::ng-deep .nav-fill .nav-link.active {
+    margin-top: -1px;
+    border-top: 2px solid #fedc3d;
+}
+
+::ng-deep .nav-pills .nav-link.active, 
+::ng-deep .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #fedc3d;
+}
+p{ margin: 0px; }
+#clip{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/IdKj4B9qrAabu/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #clip1{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/IdKj4B9qrAabu/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #clip2{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/IdKj4B9qrAabu/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+   

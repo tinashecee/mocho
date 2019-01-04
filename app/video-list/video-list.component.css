@@ -1,0 +1,13 @@
+img.ast{
+  width:40%;
+}
+.matListAvatar{
+  width:30%;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: auto;
+  margin: auto; 
+}

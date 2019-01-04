@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+<meta charset="utf-8">
+  <title>Mocho</title>
+  <base href="/">
+
+  <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.5/tiny-slider.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Ubuntu" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="theme-color" content="#f48c5b">
+
+  <link rel="manifest" href="/manifest.json">
+  <body>
+  
+  <app-root></app-root>
+  <script>
+     if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('SW registered');
+      })
+      .catch((err) => {
+        console.log('SW error', err);
+      });
+    }
+     function nohomo() {
+      var video = $("#playerid").attr("src");
+$("#playerid").attr("src","");
+$("#playerid").attr("src",video);
+}
+   
+   var modal = document.getElementById('myModala');
+
+ function modd(){
+  document.getElementById('myModala').style.display = "block";
+    
+   
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+function cloz() { 
+  document.getElementById('myModala').style.display = "none";
+} 
+
+ function modd1(){
+  document.getElementById('myModal1').style.display = "block";
+    
+   
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+function cloz1() { 
+  document.getElementById('myModal1').style.display = "none";
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+</script>
+</body>
+</html>

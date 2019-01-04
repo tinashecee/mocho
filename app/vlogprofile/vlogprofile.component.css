@@ -1,0 +1,38 @@
+.fixed {
+ 
+    position:fixed;
+    left:8px;
+    bottom:10px;
+    width:290px;
+    height: 250px;
+    background: rgb(0, 255, 106);
+  
+  }
+  .example-card {
+    max-width: 250px;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top:65px;
+    left:0px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    transition: width 2s;
+    -webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
+   
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+

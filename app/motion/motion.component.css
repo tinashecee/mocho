@@ -1,0 +1,128 @@
+
+ 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    top:65px;
+    left:0px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+    transition: width 2s;
+    -webkit-transition: height 2s; 
+}
+
+
+
+ Modal Content (image)
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    
+} 
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+  
+ 
+  
+ 
+ .example-button-toggle-label {
+    display: inline-block;
+    margin: 16px;
+  }
+ .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+
+  .example-card {
+    max-width: 400px;
+    border-top:2px solid orange;
+  }
+  img{
+    border-radius: 12px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  img {
+    width: 100%;
+    height: auto;
+}
+::ng-deep .nav-fill .nav-link.active {
+    margin-top: -1px;
+    border-top: 2px solid #fedc3d;
+}
+
+::ng-deep .nav-pills .nav-link.active, 
+::ng-deep .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #fedc3d;
+}
+p{ margin: 0px; }
+#clip{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #clip1{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/l1J9xRxf0x8zMnA4g/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    
+  }
+
+  

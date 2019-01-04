@@ -1,0 +1,19 @@
+<div id="top"></div>
+<div style="background-image: url('../../assets/icons/bg1.png');">
+<div class="example-form" style="background-color: white" >
+    <iframe id="vid_frame" [src]="source | safeUrl" frameborder="0" width=100% height=100% ></iframe>
+
+    <h4 style="text-align: center;color:black; font-family: 'Ubuntu', sans-serif;">related Videos</h4>
+<mat-nav-list *ngFor="let vlogvid of vlogvids ">
+    <a mat-list-item href="javascript:void();"  (click)="playVid(vlogvid);" onclick="topFunction();" >
+        <img matListAvatar src="{{vlogvid.pic}}"  alt="...">
+      <span style="font-family:'Noto Serif KR', sans-serif; color:black;"matLine>{{vlogvid.title}}</span></a>
+      <mat-divider></mat-divider>
+ </mat-nav-list></div>
+ </div>
+ <br/><br/>
+      
+   
+
+  
+     

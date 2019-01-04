@@ -1,0 +1,794 @@
+<br/>
+<p id="clip">Music</p>
+<br/>
+<ngb-tabset>
+  <ngb-tab  >
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Christian</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+      <br/> 
+      <mat-divider></mat-divider>
+      <br/>
+      <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      <!-- Categories Types-->
+      <ngb-tabset>
+        <ngb-tab>
+          <ng-template ngbTabTitle>
+              <p id="clip2">videos</p>
+          </ng-template>
+          <ng-template ngbTabContent>
+            <br/>
+            <div class="container " *ngIf="gospel?.length > 0;else noMusic" >
+              <div class="row">
+                  <br/>
+                  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of gospel">
+                    <!--Peverelist - Roll With The Punches-->
+                    <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                      <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <p class="card-text">{{video.title}}</p>
+                        <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                          <p style="color:green;font-size:15px">PLAY</p>
+                        </button>
+                      </div>
+                    </div>
+                    <br/>
+                  </div>
+                </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>
+              <p id="clip2">news</p>
+          </ng-template>
+
+          <ng-template ngbTabContent>
+            <div class="container row" >
+              <div class="row">
+                  <br/>
+                  <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of gospeltweets">
+                    <!--Peverelist - Roll With The Punches-->
+                    <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                      <div class="card-body" >
+                          <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                      </div>
+                    </div>
+                    <br/>
+                  </div>
+                </div>
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of gospelnews">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                          <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                            <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                            <a href="{{new.src}}">{{new.link}}</a>
+                          </div>
+                        </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of gospelevents">
+                          <!--Peverelist - Roll With The Punches-->
+                          <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                            <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                            
+                            <div class="card-body">
+                            <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                            </div>
+                            <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                          </div>
+                          <br/>
+                        </div>
+                    </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+       
+      </ngb-tabset>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <!-- Genre Types-->
+  <ngb-tab>
+    <ng-template ngbTabTitle>
+      <p id="clip1">Contemporary</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <!-- Categories Types-->
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <ngb-tabset>
+          <ngb-tab >
+            <ng-template ngbTabTitle>
+                <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container " *ngIf="contemporary?.length > 0;else noMusic" >
+               <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of contemporary">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of contemporarytweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of contemporarynews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of contemporaryevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset></div>
+      </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Hip Hop n Rnb</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+       
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <!-- Categories Types-->
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container" *ngIf="hiphop?.length > 0;else noMusic" >
+               <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of hiphop">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container " >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of hiphoptweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br />
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of hiphopnews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of hiphopevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+        </div>
+      </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Afro-Soul</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/> 
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <!-- Categories Types-->
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container" *ngIf="urban?.length > 0;else noMusic" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of urban">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of urbantweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of urbannews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of urbanevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+        </div>
+      </ng-template>
+  </ngb-tab>
+  
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Enthic Sounds</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <!-- Categories Types-->
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container " *ngIf="ethnic?.length > 0;else noMusic" >
+               <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of ethnic">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container">
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of ethnictweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of ethnicnews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of enthicevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+        </div>
+      </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Reggae&Dancehall</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <!-- Categories Types-->
+        <br/>
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <ngb-tabset>
+         
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container " *ngIf="jamaica?.length > 0;else noMusic" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of jamaica">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of jamaicatweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br />
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of jamaicanews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of jamaicaevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br />
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+      </div>
+      </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">Jazz</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <!-- Categories Types-->
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container " *ngIf="jazz?.length > 0;else noMusic" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of jazz">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+                <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container " >
+               <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of jazztweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of jazznews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of jazzevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+        </div>
+      </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+
+    <ng-template ngbTabTitle>
+      <p id="clip1">EDM&House</p>
+    </ng-template>
+    <ng-template ngbTabContent>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <div class="col-md-12 container mat-elevation-z4" style="background-image: url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);background-color:white;max-width:900px" >
+      
+        <!-- Categories Types-->
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <p id="clip2">videos</p>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br/>
+              <div class="container " *ngIf="edm?.length > 0;else noMusic" >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let video of edm">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                        <img class="card-img-top" src="{{video.picUrl}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <p class="card-text">{{video.title}}</p>
+                          <button onclick="modd();" (click)="setDrip($event,video);" mat-button>
+                            <p style="color:green;font-size:15px">PLAY</p>
+                          </button>
+                        </div>
+                      </div>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <p id="clip2">news</p>
+            </ng-template>
+  
+            <ng-template ngbTabContent>
+              <div class="container " >
+                <div class="row">
+                    <br/>
+                    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let tww of edmtweets">
+                      <!--Peverelist - Roll With The Punches-->
+                      <div class="card" style="border-top:2px solid blue;border-bottom:2px solid blue;">
+                        <div class="card-body" >
+                            <blockquote class="twitter-tweet" data-lang="en"><p class="tweet-text-size" style="font-family: 'Ubuntu', sans-serif;font-weight: bold" lang="en" dir="ltr">{{tww.body}}</p>&mdash; {{tww.poster}}<a href="{{tww.link}}">{{tww.time}}</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                      </div>
+                      <br/> 
+                    </div>
+                  </div>
+                  <div class="row">
+                      <br/>
+                      <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let new of edmnews">
+                        <!--Peverelist - Roll With The Punches-->
+                        <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                            <img class="card-img-top" src="{{new.pic}}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <p class="card-text"  style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{new.body}}</p>
+                              <a href="{{new.src}}">{{new.link}}</a>
+                            </div>
+                          </div>
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of edmevents">
+                            <!--Peverelist - Roll With The Punches-->
+                            <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                              <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                              <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                              
+                              <div class="card-body">
+                              <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                              </div>
+                              <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+                            </div>
+                            <br/>
+                          </div>
+                      </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+         
+        </ngb-tabset>
+        </div>
+      </ng-template>
+  </ngb-tab>
+
+</ngb-tabset><br/><br/>
+<ng-template #noNews>
+    <hr>
+    <h5>Sorry no News could be found or fetched at the moment</h5>
+  </ng-template>
+  <ng-template #noMusic>
+      <hr>
+      <h5>Sorry no Music could be found or fetched at the moment</h5>
+    </ng-template>
+    <div id="myModala" class="modal">
+          <button  onclick="cloz();nohomo();" class="close">&times;</button>
+          <iframe  id="playerid" [src]="drip | safeUrl" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+       </div>
