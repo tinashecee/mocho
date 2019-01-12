@@ -1,0 +1,99 @@
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+  <mat-toolbar style="background-color: #fdd005;" class="example-toolbar  mat-elevation-z4">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name"><a class="py-2 " [routerLink]="['/']" style="font-family: 'Ubuntu', sans-serif; color:black;font-size: 32px;font-weight: bold;">
+      <div><img  src="../assets/icons/LeMocho.png"></div>
+   </a></h1>
+   <div  class="py-2  " style="position:relative;padding:auto;margin:auto"><button class="launch"   data-toggle="modal" data-target="#myModal"><img src="../assets/icons/musica-searcher.png"></button></div>
+   
+
+  </mat-toolbar>
+
+  <mat-sidenav-container  [hasBackdrop]="false" class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav [opened]="mobileQuery.matches? 'false':'true'"  style="background-color:#00274c" #snav [mode]="mobileQuery.matches ? 'side' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item style="font-family: 'Ubuntu', sans-serif;color:white;font-size:22px" [routerLink]="['/']" >home</a>
+        <a mat-list-item style="font-family: 'Ubuntu', sans-serif;color:white;font-size:22px" [routerLink]="['/musik']" >music</a>
+        <a mat-list-item style="font-family: 'Ubuntu', sans-serif;color:white;font-size:22px"  routerLink='/motion/motion' >reality in motion</a>
+        <a mat-list-item style="font-family: 'Ubuntu', sans-serif;color:white;font-size:22px" [routerLink]="['/arts']" >arts</a>
+        <a mat-list-item style="font-family: 'Ubuntu', sans-serif;color:white;font-size:22px" [routerLink]="['/events']" >events</a>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+          <router-outlet ></router-outlet>
+     
+      <div class="container-fluid row " style="position:relative;bottom: 0%; margin:0px;padding: 0px;width:100%">
+        <div class="col-12 col-md">
+          <img class="mb-2" src="../../assets/icons/apple-icon.png" alt="" width="24" height="24">
+          <small class="d-block mb-3 text-muted">&copy; <p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Mocho 2018</p></small>
+        </div>
+        
+        <div class="col-4 col-md">
+          <h5 style="font-family:'Ubuntu',sans-serif; color:#1A174B">Services</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#"><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Adverise</p></a></li>
+            <li><a class="text-muted" href="#"><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Contact Us</p></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-4 col-md">
+          <h5><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">About</p></h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#"><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Team</p></a></li>
+            <li><a class="text-muted" href="#"><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Privacy</p></a></li>
+            <li><a class="text-muted" href="#"><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Terms</p></a></li>
+          </ul>
+          <br><br>
+        </div>
+        <div class="col-4 col-md">
+          <h5><p style="font-family:'Ubuntu',sans-serif;color:#1A174B">Follow</p></h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#"><img src="../assets/icons/facebook.png"></a></li>
+            <li><a class="text-muted" href="#"><img src="../assets/icons/twitter (1).png"></a></li>
+            <li><a class="text-muted" href="#"><img src="../assets/icons/youtube.png"></a></li>
+          </ul>
+          <br><br>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <mat-form-field class="example-form-field">
+                <input matInput type="text" placeholder="Search Videos" [(ngModel)]="queryString">
+                <button mat-button *ngIf="queryString" matSuffix mat-icon-button aria-label="Clear" (click)="queryString=''"><mat-icon>close</mat-icon></button>
+              </mat-form-field>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+            <mat-nav-list >
+                <a mat-list-item *ngFor="let vlogvid of videos | filterdata: queryString : 'title' ; let i = index "  onclick="topFunction();"  [routerLink]="['/videos',vlogvid.url]"  data-dismiss="modal"> {{vlogvid.title}}</a>
+                <mat-divider></mat-divider>
+                <a mat-list-item *ngFor="let vlogvid of videos1 | filterdata: queryString : 'title' ; let i = index " (click)="playVid1(vlogvid);" onclick="topFunction();"  [routerLink]="['/videos',vlogvid.source]"  data-dismiss="modal"> {{vlogvid.title}}</a>
+                
+             </mat-nav-list> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+
+
+ 

@@ -1,0 +1,196 @@
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    border-radius: 10%;
+  }
+  html,body {
+    overflow-y: auto;
+  
+  
+  } 
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background-color: transparent;
+    color: black;
+  }
+  .fa-twitter {
+    background-color: transparent;
+    color: black;
+  }
+  .fa-youtube {
+    background-color: transparent;
+    color: black;
+  }
+  .fa-search {
+    background-color: transparent;
+    color: black;
+  }
+  #sizeup{
+size:14px;
+  }
+.navbar-custom {
+    background-color: #fedc3d;
+}
+
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 40px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        background-color: transparent;
+        width: 0px;
+        float: Left;
+        margin-left: 205px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        
+        padding: 0 5px 0 2px;
+      
+    }
+
+        .search:hover input, .search input:focus {
+            background-color: #fedc3d;
+            width: 200px;
+            margin-left: 0px;
+        }
+
+.btn {
+    background-color: transparent;
+    backface-visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 5px;
+ 
+}
+
+.example-form-field {
+    width: 600px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+  }
+  
+  .example-is-mobile .example-toolbar {
+     
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+    
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  
+
+button.launch {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+    padding: 5px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+
+    margin-right: 10px;
+    }
+    
+    button.launch:hover {
+    cursor: pointer;
+    background-color: #FABD44;
+    }
+   
+    button:active {
+    outline: none;
+    border: none;
+    }
+    
+    button:focus {outline:0;}
+
+    
+    ul#menu li {
+        display:inline;
+    }
+    .example-stretched-tabs {
+      max-width: 800px;
+    }
+    .elevate{
+      position:fixed;
+      padding-bottom:6px;
+      margin-bottom:6px
+    }
+    .example-toolbar{
+      padding-bottom: 5px;
+    margin-bottom: 5px;
+    }
+    .scroll-container {
+      position: relative;
+    }
+    html,body {
+      background-color:white;
+       
+      }
+      
+    .scrollable-content {
+      padding: 16px;
+      margin: 0;
+    }
+
+  #clip{
+    /*
+    Ensure background is added first
+    */  
+    background: linear-gradient(to bottom, #eee, rgba(222,112,6,0.2), #de7006),url(https://media.giphy.com/media/ypDa5gIE8VfIk1lQ9s/giphy.gif);
+    
+     background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+  }
+        
+      
